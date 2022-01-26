@@ -5,7 +5,31 @@
         <label>Name</label>
           <input [(ngModel)]="event.name" name="name" type="text" class="form-control" pattern=".{8,20}" required #name=ngModel>
           <div *ngIf="name.errors?.['required']" class="error-message">Name is required</div>
-
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+          <input [(ngModel)]="event.date" name="date" type="text" class="form-control" required #date=ngModel>
+          <div *ngIf="date.errors?.['required']" class="error-message">Date is required</div>
+      </div>
+      <div class="form-group">
+        <label>Time</label>
+          <input [(ngModel)]="event.time" name="time" type="text" class="form-control" required #time=ngModel>
+          <div *ngIf="time.errors?.['required']" class="error-message">Time is required</div>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+          <input [(ngModel)]="location.address" name="address" type="text" class="form-control" required #address=ngModel>
+          <div *ngIf="address.errors?.['required']" class="error-message">Address is required</div>
+      </div>
+      <div class="form-group">
+        <label>City</label>
+          <input [(ngModel)]="location.city" name="city" type="text" class="form-control" required #city=ngModel>
+          <div *ngIf="city.errors?.['required']" class="error-message">City is required</div>
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+          <input [(ngModel)]="location.country" name="country" type="text" class="form-control" required #country=ngModel>
+          <div *ngIf="country.errors?.['required']" class="error-message">Country is required</div>
       </div>
 
       <button [disabled]="!eventForm.valid" class="btn btn-block btn-primary"><i class="fa fa-save"></i></button>
